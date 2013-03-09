@@ -1,6 +1,14 @@
-= airport_scraper
+= Airport Scraper
 
 A gem for extracting Airport mentions from short snippets of text. Just something I threw together as an experiment that's turned into an interesting hobby project.
+
+== INSTALL
+
+    gem install airport_scraper
+
+or, in your Gemfile
+
+    gem 'airport_scraper'
 
 == Examples
 

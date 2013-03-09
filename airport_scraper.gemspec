@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "airport_scraper/version"
+require "airport_scraper/version" 
 
 Gem::Specification.new do |s|
   s.name      = 'airport_scraper'
@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
   s.authors   = ['Jacob Harris']
   s.email     = ['jharris@nytimes.com']
   s.homepage  = 'https://github.com/harrisj/airport_scraper'
-
+  
+  s.add_development_dependency 'rspec'
+  
   # ensure the gem is built out of versioned files
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]

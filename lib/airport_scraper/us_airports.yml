@@ -991,7 +991,7 @@ JVL:
   matchers: "Janesville"
 
 BGM:
-  citY: "Johnson City, NY"
+  city: "Johnson City, NY"
   
 TRI:
   city: "Johnson City, TN"

@@ -12,7 +12,7 @@ describe AirportScraper do
    
   context "new" do
     before :each do
-      @scrape = AirportScraper.new
+      @scrape = AirportScraper::Scraper.new
     end
   
     it "should load the airports.yml file into @airports" do

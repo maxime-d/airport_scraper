@@ -886,6 +886,7 @@ HOU:
     - "Hobby"
     
 IAH:
+  city: "Houston, TX"
   name: "Houston Intercontinental Airport"
   matchers:
     - "Houston"

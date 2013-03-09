@@ -1,8 +1,8 @@
-= Airport Scraper
+# Airport Scraper
 
 A gem for extracting Airport mentions from short snippets of text. Just something I threw together as an experiment that's turned into an interesting hobby project.
 
-== INSTALL
+## Install
 
     gem install airport_scraper
 
@@ -10,7 +10,7 @@ or, in your Gemfile
 
     gem 'airport_scraper'
 
-== Examples
+## Examples
 
 	scraper = AirportScraper.new
   pdx1 = scrape.extract_airports("On my flight to Portland. Looking forward to kicking back at home.")
@@ -21,14 +21,14 @@ Both pdx1 and pdx2 would be an array with an Airport hash for Portland Internati
 	multi = scrape.extract_airports("On @SouthwestAir #2992 heading from LIT to DAL and CEO Gary Kelly is on board!")
 	assert_equal ['LIT', 'DAL'], multi.map {|x| x['code']}
 
-== Possible Future Work
+## Possible Future Work
 
 * Ways to limit scope to major airports only or specific countries
 * More airport information
 * Geocoding/WOEIDs for airports
 * Ordering of airports in the result array to reflect trip order
 
-== Note on Patches/Pull Requests
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -39,6 +39,6 @@ Both pdx1 and pdx2 would be an array with an Airport hash for Portland Internati
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2009 Jacob Harris. See LICENSE for details.

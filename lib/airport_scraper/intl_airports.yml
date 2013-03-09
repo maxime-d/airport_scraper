@@ -6067,11 +6067,11 @@ PAR:
     - "Paris"
 
 CDG:
-  name: "Charles Degaulle International Airport"
+  name: "Charles De Gaulle International Airport"
   city: "Paris, France"
   matchers:
     - "Defauller"
-    - "Charles Degaulle"
+    - "Charles De Gaulle"
 
 ORY:
   city: "Paris, France"

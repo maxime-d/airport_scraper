@@ -8,57 +8,59 @@ US_TESTS = YAML.load_file(File.join(File.dirname(__FILE__), "us_airports_tests.y
 INTL_TESTS = YAML.load_file(File.join(File.dirname(__FILE__), "intl_airports_tests.yml"))
 BAD_MATCHES = YAML.load_file(File.join(File.dirname(__FILE__), "bad_matches.yml"))
 
-# class TestAirportScraper < Test::Unit::TestCase
-#   context "new" do
-#     setup do
-#       @scrape = AirportScraper.new
-#     end
-#     
-#     should "load the airports.yml file into @airports" do
-#       airports = @scrape.airports
-#       assert_not_nil airports
-#       assert_not_nil airports['JFK'], "Didn't find JFK in airports"
-#     end
-#     
-#     should_eventually "create an @code_match_regex to match 3-letter codes" do
-#       code_regex = @scrape.instance_variable_get("@code_match_regex")
-#       assert_not_nil(code_regex)
-#       assert_match(code_regex, 'JFK')
-#       assert_no_match(code_regex, 'JFKX')
-#       assert_no_match(code_regex, 'jfk')
-#     end
-#     
-#     should_eventually "create an @airport_regex" do
-#       name_regex = @scrape.instance_variable_get("@airport_regex")
-#       assert_not_nil(name_regex)
-#       assert_match(name_regex, "Heathrow")
-#       assert_match(name_regex, "heathrow")
-#       assert_no_match(name_regex, "HeathrowX")
-#     end
-#     
-#     should "create an @matcher_prefixes array" do
-#       by_priority = @scrape.instance_variable_get("@matcher_prefixes")
-#       assert_not_nil(by_priority)
-#     end
-#     
-#     should "order @matcher_prefixes values in descending match_priority order" do
-#       # Check that PWM comes before PDX
-#       pref = @scrape.instance_variable_get("@matcher_prefixes")
-#       by_priority = pref[@scrape.prefix_from_match("Portland")]
-#       
-#       assert_not_nil by_priority
-#       pdx = by_priority.detect {|x| x['code'] == 'PDX'}
-#       pwm = by_priority.detect {|x| x['code'] == 'PWM'}
-#       
-#       pdx_idx = by_priority.index(pdx)
-#       pwm_idx = by_priority.index(pwm)
-#       assert_not_nil pdx_idx
-#       assert_not_nil pwm_idx
-#       
-#       assert(pwm_idx < pdx_idx)
-#     end
-#   end
-#   
+describe AirportScraper do
+   
+  context "new" do
+    before :each do
+      @scrape = AirportScraper.new
+    end
+  
+    it "should load the airports.yml file into @airports" do
+      airports = @scrape.airports
+      airports.should_not nil
+      airports['JFK'].should_not nil
+    end
+  
+    it "create an @code_match_regex to match 3-letter codes" do
+      code_regex = @scrape.instance_variable_get("@code_match_regex")
+      code_regex.should_not nil
+      code_regex.should match('JFK')
+      code_regex.should_not match('JFKX')
+      code_regex.should_not match('jfk')
+    end
+    
+    it "create an @airport_regex" do
+      name_regex = @scrape.instance_variable_get("@airport_regex")
+      name_regex.should_not nil
+      name_regex.should match("Heathrow")
+      name_regex.should_not match('HeathrowX')
+    end
+    
+    it "create an @matcher_prefixes array" do
+      by_priority = @scrape.instance_variable_get("@matcher_prefixes")
+      by_priority.should_not nil
+    end
+    
+    it "order @matcher_prefixes values in descending match_priority order" do
+      # Check that PWM comes before PDX
+      pref = @scrape.instance_variable_get("@matcher_prefixes")
+      by_priority = pref[@scrape.prefix_from_match("Portland")]
+      
+      by_priority.should_not nil
+
+      pdx = by_priority.detect {|x| x['code'] == 'PDX'}
+      pwm = by_priority.detect {|x| x['code'] == 'PWM'}
+      
+      pdx_idx = by_priority.index(pdx)
+      pwm_idx = by_priority.index(pwm)
+      
+      pdx_idx.should_not nil
+      pwm_idx.should_not nil
+      pwm_idx.should < pdx_idx
+    end
+  
+  end 
+  
 #   context "possible_flight?" do
 #     setup do
 #       @scrape = AirportScraper.new
@@ -142,22 +144,5 @@ BAD_MATCHES = YAML.load_file(File.join(File.dirname(__FILE__), "bad_matches.yml"
 #       end
 #     end    
 #   end
-# end
-
-describe AirportScraper do
-   
-  context "new" do
-    before :each do
-      @scrape = AirportScraper.new
-    end
-  end
-  
-  describe '.new' do
-    it "should load the airports.yml file into @airports" do
-      airports = @scrape.airports
-      assert_not_nil airports
-      assert_not_nil airports['JFK'], "Didn't find JFK in airports"
-    end
-  end
   
 end

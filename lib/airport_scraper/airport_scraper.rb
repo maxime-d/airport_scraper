@@ -37,7 +37,7 @@ class AirportScraper
         when Array
           value['matchers']
         else
-          value['matchers'].to_a
+          [value['matchers']]
       end
       
       value['regex'] = regex_from_matchers(value['matchers'])

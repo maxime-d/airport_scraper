@@ -14,7 +14,7 @@ module AirportScraper
       if matchers.nil? || matchers.empty?
         nil
       else
-        /^(#{matchers.map {|x| x.gsub(".", "\\.")}.join('|')})\b/i
+        /(#{matchers.map {|x| x.gsub(".", "\\.")}.join('|')})\b/i
       end
     end
 
@@ -144,7 +144,7 @@ module AirportScraper
           matches.compact.each do |match|
             next if match.nil? || match.length < 2
 
-            if match =~ /^#{@code_match_regex}/
+            if match =~ /#{@code_match_regex}/
               #puts "MATCH: #{match}"
               airport = @airports[$1]
               airports << airport unless airport.nil?

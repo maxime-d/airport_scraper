@@ -1011,7 +1011,7 @@ JLN:
     - "Joplin"
 
 JFK:
-  name: John F. Kennedy International Airport
+  name: "John F. Kennedy International Airport"
   city: "New York, NY"
   matchers:
     - "jfk"
@@ -1022,7 +1022,7 @@ JFK:
 JNU:
   city: "Juneau, Alaska"
   matchers:
-    - Juneau
+    - "Juneau"
     
 OGG:
   city: "Kahului, HI"

@@ -24,17 +24,13 @@ ADD:
 
 AMD:
   city: "Ahmedabad, India"
-  matcherS: "Ahmedabad"
+  matchers: "Ahmedabad"
 
 AMS:
-  title: Amsterdam Schiphol International Airport
-  major: true
-  country: nl
+  city: "Amsterdam, NL"
   matchers:
     - "Amsterdam"
-    - "NL"
     - "Schiphol"
-    - Shiphol
 
 AUH:
   city: "Abu Dhabi, United Arab Emirates"
@@ -1574,13 +1570,14 @@ DIB:
   matchers: "Dibrugarn"
 
 DIN:
+  city: "Gia Lam"
   name: "Gialam International Airport"
   matchers:
      - "Dien Bien Phu"
      - "Gialam"
 
 DIJ:
-  name: "Dijon, France"
+  city: "Dijon, France"
   matchers:
     - "Dijon"
 
@@ -1625,7 +1622,7 @@ DJE:
   matchers: "Djerba"
 
 JIB:
-  name: "Djibouti"
+  city: "Djibouti"
   matchers:
     - "Djibouti"
 
@@ -1644,7 +1641,7 @@ DOH:
 # Dominica, Dominica - Melville Hall (DOM)
 
 CFN:
-  name: "Donegal, Ireland"
+  city: "Donegal, Ireland"
   matchers:
     - "Donegal"
 
@@ -1673,7 +1670,7 @@ DLA:
   matchers: "Dovala"
 
 DRS:
-  name: "Dresden, Germany"
+  city: "Dresden, Germany"
   matchers:
     - "Dresden"
 
@@ -3978,7 +3975,7 @@ LIL:
 # Lilongwe, Malawi (LLW)
 
 LIM:
-  name: "Lima, Peru"
+  city: "Lima, Peru"
   matchers:
     - "Lima"
 
@@ -6070,7 +6067,7 @@ CDG:
   name: "Charles De Gaulle International Airport"
   city: "Paris, France"
   matchers:
-    - "Defauller"
+    - "De Gaulle"
     - "Charles De Gaulle"
 
 ORY:
@@ -7134,7 +7131,7 @@ LED:
 # St. Pierre de la Reunion, Reunion (ZSE)
 
 STT:
-  name: "St. Thomas Island, U.S. Virgin Islands"
+  city: "St. Thomas Island, U.S. Virgin Islands"
   matchers:
     - "Saint Thomas"
     - "St. Thomas"
@@ -7194,7 +7191,7 @@ STR:
 # Svolvaer, Norway (SVJ)
      
 SYD:
-  name: "Sydney, Australia"
+  city: "Sydney, Australia"
   matchers:
     - "Sydney"
 

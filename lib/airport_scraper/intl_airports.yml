@@ -6060,19 +6060,25 @@ PRS:
 PAR:
   name: "Paris (all airports)"
   city: "Paris, France"
+  lat: "48.856"
+  lng: "2.35242"
   matchers:
     - "Paris"
 
 CDG:
   name: "Charles De Gaulle International Airport"
   city: "Paris, France"
+  lat: "49.004"
+  lng: "2.57110"
   matchers:
     - "De Gaulle"
     - "Charles De Gaulle"
 
 ORY:
-  city: "Paris, France"
   name: "Orly International Airport"
+  city: "Paris, France"
+  lat: "48.73045"
+  lng: "2.36940"
   matchers:
     - "Orly"
 

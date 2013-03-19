@@ -1,9 +1,11 @@
 #encoding: utf-8
 require 'yaml'
+require 'geocoder'
 
 module AirportScraper
   class Scraper
     attr_reader :airports, :airport_codes
+    #geocoded_by false, :latitude => :lat, :longitude => :lng
 
     def initialize
       load_airports
@@ -40,7 +42,9 @@ module AirportScraper
           else
             [value['matchers']]
         end
-      
+        value['lat'] ||= value['lat']
+        value['lng'] ||= value['lng']
+              
         value['regex'] = regex_from_matchers(value['matchers'])
 
         unless value['matchers'].nil?
@@ -96,6 +100,17 @@ module AirportScraper
 
     def airport(code)
       @airports[code]
+    end
+    
+    def geocoding(lat,lng)
+      airports = {}
+      @airports.each do |key, value|
+        if !value['lng'].nil? && !value['lng'].nil?
+          value['distance'] = Geocoder::Calculations.distance_between([lat,lng], [value['lat'],value['lng']])
+          airport[key] = value
+        end
+      end
+      return airports
     end
   
     def flight_terms

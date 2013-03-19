@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
   s.authors   = ['Jacob Harris']
   s.email     = ['jharris@nytimes.com']
   s.homepage  = 'https://github.com/harrisj/airport_scraper'
-  
+
+  s.add_dependency 'geocoder'
   s.add_development_dependency 'rspec'
   
   # ensure the gem is built out of versioned files

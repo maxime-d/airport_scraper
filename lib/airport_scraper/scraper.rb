@@ -5,7 +5,6 @@ require 'geocoder'
 module AirportScraper
   class Scraper
     attr_reader :airports, :airport_codes
-    #geocoded_by false, :latitude => :lat, :longitude => :lng
 
     def initialize
       load_airports
@@ -62,7 +61,7 @@ module AirportScraper
         airports.sort! {|a, b| b['match_priority'] <=> a['match_priority'] }
       end
     
-  #    raise @matcher_prefixes.inspect
+      #raise @matcher_prefixes.inspect
     end
   
     def prefix_from_match(str)
@@ -102,12 +101,12 @@ module AirportScraper
       @airports[code]
     end
     
-    def geocoding(lat,lng)
+    def near(lat,lng)
       airports = {}
       @airports.each do |key, value|
         if !value['lng'].nil? && !value['lng'].nil?
           value['distance'] = Geocoder::Calculations.distance_between([lat,lng], [value['lat'],value['lng']])
-          airport[key] = value
+          airports[key] = value if value['distance'] < 100
         end
       end
       return airports

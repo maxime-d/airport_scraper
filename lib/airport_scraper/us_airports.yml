@@ -1013,6 +1013,8 @@ JLN:
 JFK:
   name: "John F. Kennedy International Airport"
   city: "New York, NY"
+  lat: "40.643772"
+  lng: "-73.781993"
   matchers:
     - "jfk"
     - "J.F.K."
@@ -1148,6 +1150,8 @@ LAF:
 LGA:
   name: La Guardia International Airport
   city: "New York, NY"
+  lat: "40.777221"
+  lng: "-73.872492"
   matchers:
     - "Laguardia"
     - "La Guardia"
@@ -1482,6 +1486,8 @@ MSY:
 NYC:
   name: "New York, all airports"
   city: "New York, NY"
+  lat: "40.714"
+  lng: "-74.005"
   matchers:
     - "New York"
     - "New York City"

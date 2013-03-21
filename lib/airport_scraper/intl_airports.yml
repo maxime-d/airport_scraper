@@ -242,6 +242,8 @@ BCI:
 
 BCN:
   city: "Barcelona, Spain"
+  lat: "41.385"
+  lng: "2.173"
   matchers:
     - Barcelona
 
@@ -489,12 +491,16 @@ BVG:
 BER:
   name: "Berlin, Germany (all airports)"
   city: "Berlin, Germany"
+  lat: "52.519"
+  lng: "13.406"
   matchers:
     - Berlin
 
 TXL:
   name: "Berlin Tegel Airport"
   city: "Berlin, Germany"
+  lat: "52.552018"
+  lng: "13.292616"
   match_priority: 40
   matchers:
     - "Tegel"
@@ -503,6 +509,8 @@ TXL:
 THF:
   name: "Berlin Templehof Airport"
   city: "Berlin, Germany"
+  lat: "52.47882"
+  lng: "13.395223"
   match_priority: 40
   matchers:
     - "Templehof"
@@ -511,6 +519,8 @@ THF:
 SXF:
   name: "Berlin Schoenefeld Airport"
   city: "Berlin, Germany"
+  lat: "52.386665"
+  lng: "13.516983"
   match_priority: 40
   matchers:
     - "Schoenefeld"
@@ -4056,6 +4066,8 @@ LFW:
 LON:
   name: "London, UK (all airports)"
   city: "London, UK"
+  lat: "51.511"
+  lng: "-0.119"
   matchers:
     - "London"
     - "LDN"
@@ -4063,30 +4075,40 @@ LON:
 LGW:
   name: "Gatwick Airport"
   city: "London, UK"
+  lat: "51.155455"
+  lng: "-0.165058"
   matchers:
     - "Gatwick"
 
 LHR:
   name: "Heathrow Airport"
   city: "London, UK"
+  lat: "51.47238"
+  lng: "-0.45094"
   matchers:
     - "Heathrow"
 
 LTN:
   name: "Luton Airport"
   city: "London, UK"
+  lat: "51.879974"
+  lng: "-0.377181"
   matchers:
     - "Luton"
     
 STN:
   name: "Stansted Airport"
   city: "London, UK"
+  lat: "51.889617"
+  lng: "0.26248"
   matchers:
     - "Stansted"
 
 LCY:
   name: "London City Airport"
   city: "London, UK"
+  lat: "51.50341"
+  lng: "0.04877"
   match_priority: 60
   matchers:
     - "London City"    
